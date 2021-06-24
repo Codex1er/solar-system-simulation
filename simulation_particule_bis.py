@@ -20,8 +20,8 @@ const=0.005
 max_X=100
 max_Y=100
 d=70#rayon de la particule=d*const*masse**(1/3)
-nb_image=5000
-nb_particule=101
+nb_image=500
+nb_particule=51
 
 p_X=[[0]]
 p_Y=[[0]]
@@ -33,19 +33,17 @@ for i in range(1,nb_particule):
     p_X[-1]=p_X[-1]+[random.random()*max_X*2-max_X]
     p_Y[-1]=p_Y[-1]+[random.random()*max_Y*2-max_Y]
     
-    v_X[-1]=v_X[-1]+[p_Y[0][i]*4*math.pi**2/((p_Y[0][i]**2+p_X[0][i]**2)**(3/4)*(const*1000)**(1/2))]
-    v_Y[-1]=v_Y[-1]+[-p_X[0][i]*4*math.pi**2/((p_Y[0][i]**2+p_X[0][i]**2)**(3/4)*const*1000)**(1/2)]
+    v_X[-1]=v_X[-1]+[p_Y[0][i]*(const*masse[0][0])**(1/2)/((p_Y[0][i]**2+p_X[0][i]**2)**(3/4))]
+    v_Y[-1]=v_Y[-1]+[-p_X[0][i]*(const*masse[0][0])**(1/2)/((p_Y[0][i]**2+p_X[0][i]**2)**(3/4))]
     """"""
-   
-    masse[-1]=masse[-1]+[3*random.random()]
+
+    masse[-1]=masse[-1]+[random.random()]
 
 collision=[]
 """
 v_X=[[0 for i in range(nb_particule)]]
 v_Y=[[0 for i in range(nb_particule)]]
 """
-
-[[1,2,3,6,5,9]+[4]]
 
 
 
